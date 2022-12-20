@@ -2,6 +2,7 @@
 const fnameEl = document.getElementById("fname");
 const kmEl = document.getElementById("km");
 const ageEl = document.getElementById("age-type");
+
 let newcpk = 1;
 const price = 0.21;
 let carrozza = Math.floor(Math.random() * 10);
@@ -16,6 +17,8 @@ generate.addEventListener ('click',
 
         document.getElementById("output-tab").style.display = "block";
         document.getElementById("my-ticket").style.display = "block";
+        document.getElementById("savepdf").style.display = "inline-block";
+
 
 
         let cpk = price * kmEl.value;
@@ -61,14 +64,33 @@ generate.addEventListener ('click',
     }
 )
 
+function clearInput() {
+    let fNameEl = document.getElementById("fname");
+    if (fNameEl.value !="") {
+        fNameEl.value = "";
+    }
 
+    let kmEl = document.getElementById("km");
+    if (kmEl.value !="") {
+        kmEl.value = "";
+    }
 
+    document.getElementById("my-ticket").style.display = "none";
+    document.getElementById("output-tab").style.display = "none";
+    document.getElementById("savepdf").style.display = "none";
+}
 
-// document.getElementById('km').innerHTML = km;
-// document.getElementById('age').innerHTML = age;
-// document.getElementById('cpk').innerHTML = newcpk;
-// document.getElementById('cpkid').innerHTML = newcpk;
+function generatePDF() {
+    const element = document.getElementById('output-tab');
+    var opt = {
+       margin:       1,
+       filename:     'ticket.pdf',
+       image:        { type: 'jpeg', quality: 0.98 },
+       html2canvas:  { scale: 2 },
+       jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+     };
 
-
+     html2pdf().set(opt).from(element).save();
+    }
 
 
