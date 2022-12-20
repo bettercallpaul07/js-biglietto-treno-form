@@ -12,17 +12,74 @@
     </head>
 
     <body>
-        <h1 class="text-center my-4">Calcola il prezzo del biglietto</h1>
+        <h1 class="text-center my-4 text-light text-uppercase">Calcola il prezzo del biglietto</h1>
 
         <div class="container">
-            <div></div>
-            <form id="frm1">
-                Nome: <input type="text" id="fname"><br>
-                Cognome: <input type="text" id="lname"><br>
-                Km da percorrere: <input type="number" id="km"><br>
-                Età:<input type="number" id="age"><br>
-                <input type="button" id="submitButton" value="Genera">
-              </form>
+            <div id="input-tab">
+                <div class="d-flex justify-content-center fs-6 pt-4">
+                    <div class="pe-4 ps-4">
+                        <label class="d-block my-2 text-center">Nome e Cognome</label>
+                        <input type="text" id="fname" class="option-style"/>
+                    </div>
+                    <div class="pe-4 ps-4">
+                        <label class="d-block my-2 text-center">Km da percorrere</label>
+                        <input type="number" id="km" class="option-style" />
+                    </div>
+                    <div class="pe-4 ps-4">
+                        <label class="d-block my-2 text-center">Fascia d'età</label>
+                        <select id="age-type" class="option-style">
+                            <option value="magg">Maggiorenne</option>
+                            <option value="min">Minorenne</option>
+                            <option value="over">Over 65</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="py-5 d-flex justify-content-center">
+                    <button class="btn me-1" id="generate">
+                        Genera il tuo biglietto
+                </button>
+                <button class="btn  ms-1" id="reset">
+                    Annulla
+                </button>
+                </div>
+
+            </div>
+
+            <p class="text-center my-3 text-white text-uppercase">Il tuo Biglietto</p>
+            <div id="output-tab">
+                <div class="p-3">
+                    <h6 class="fw-bold  text-uppercase">Dettaglio Passeggeri</h6>
+                    <div class="ticket d-flex">
+                        <div class="w-25 ticket-name">
+                            <p class="p-3 fw-bold">Nome Passeggero</p>
+                            <p></p>
+                        </div>
+                        <div class="d-flex w-100">
+                            <div class="tile p-3">
+                                <p>Offerta</p>
+                                <p>Test</p>
+                            </div>
+                            <div class="tile p-3">
+                                <p>Carrozza</p>
+                                <p>Test</p>
+                            </div>
+                            <div class="tile p-3">
+                                <p>Codice CP</p>
+                                <p>Test</p>
+                            </div>
+                            <div class="tile p-3">
+                                <p>Costo Biglietto</p>
+                                <p>Test</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
               
 
 

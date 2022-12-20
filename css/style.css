@@ -8,19 +8,52 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-    /* max-width: ;
-    margin: ; */
+
+body {
+    background-color: tomato;
 }
 
-header {
+#input-tab, #output-tab {
+    background-color: white;
+	font-size: 18px;
+	letter-spacing: 1px;
+	min-height: 200px;
+	width: 100%;
+    border-radius: 20px;
+}
+
+.btn {
+    border: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 8px 12px;
+	background-color: red;
 
 }
 
-main {
+.option-style {
+    border: 2px solid tomato;
+    border-color: tomato;
+    height: 2em;
 
 }
 
-footer {
+.ticket {
+    height: 150px;
+    border: 1px solid black;
+}
 
+.ticket-name {
+    background-color: grey;
+    height: 100%;
+}
+
+.tile {
+    width: 25%;
+}
+
+.tile p:first-child {
+    font-weight: bold;
+    padding-bottom: 1em;
 }
