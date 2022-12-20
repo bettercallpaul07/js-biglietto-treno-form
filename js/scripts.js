@@ -1,69 +1,59 @@
 //Dichiariamo gli elementi del DOM
 const fnameEl = document.getElementById("fname");
-const lnameEl = document.getElementById("lname");
 const kmEl = document.getElementById("km");
-const ageEl = document.getElementById("age");
+const ageEl = document.getElementById("age-type");
 let newcpk = 1;
 const price = 0.21;
+let carrozza = Math.floor(Math.random() * 10);
+let codice = Math.floor(Math.random() * 10000) + 90000;
 
 
-submitButton.addEventListener ('click',
+console.log(ageEl.value)
+
+
+generate.addEventListener ('click',
     function() {
+
+        document.getElementById("output-tab").style.display = "block";
+        document.getElementById("my-ticket").style.display = "block";
+
+
         let cpk = price * kmEl.value;
         cpk = cpk.toFixed(2);
 
 
-        if (ageEl.value < 18 ) {
+        if (ageEl.value == "min" ) {
             let newcpk = cpk*0.80;
-            let discount = "Complimenti, essendo minorenne hai diritto ad uno sconto del 20% sul prezzo del biglietto;"
-            let savedprice = cpk*0.20;
-            savedprice = savedprice.toFixed(2) + '€'
-            cpk = cpk + '€'
-        
-            // document.getElementById("nodiscountprice").innerHTML ="Prezzo del biglietto senza sconto: " + cpk + '.';
-            // document.getElementById("savedprice").innerHTML = discount + " hai risparmiato: " + savedprice + '.';
-        
-            console.log("Sei minorenne, hai uno sconto!")
-            console.log(fnameEl.value)
-            console.log(lnameEl.value)
-            console.log(kmEl.value)
-            console.log(ageEl.value)
-            console.log(cpk)
-            console.log(newcpk)
-            console.log(savedprice)
+            newcpk = newcpk.toFixed(2);
+            newcpk = newcpk + '€'
 
+            document.getElementById("user-name").innerHTML = fnameEl.value;
+            document.getElementById("ticket-type").innerHTML = "Riduzione Minorenne";
+            document.getElementById("carrozza").innerHTML = carrozza;
+            document.getElementById("codice").innerHTML = codice;
+            document.getElementById("ticket-price").innerHTML = newcpk;
         }
         
-        else if  (ageEl.value >= 65) {
-            let cpk = kmEl.value * price;
+        else if  (ageEl.value == "over") {
             let newcpk = cpk*0.60;
-            let discount = "Complimenti, essendo over 65 hai diritto ad uno sconto del 40% sul prezzo del biglietto;"
-            let savedprice = cpk*0.40;
-            savedprice = savedprice.toFixed(2) + '€'
-            cpk = cpk + '€'
-        
-            // document.getElementById("nodiscountprice").innerHTML ="Prezzo del biglietto senza sconto: " + cpk + '.';
-            // document.getElementById("savedprice").innerHTML = discount + " hai risparmiato: " + savedprice + '.';
-        
-            console.log("Sei Over 65, hai uno sconto!")
-            console.log(fnameEl.value)
-            console.log(lnameEl.value)
-            console.log(kmEl.value)
-            console.log(ageEl.value)
-            console.log(cpk)
-            console.log(newcpk)
-            console.log(savedprice)
-        
+            newcpk = newcpk.toFixed(2);
+            newcpk = newcpk + '€'
+
+            document.getElementById("user-name").innerHTML = fnameEl.value;
+            document.getElementById("ticket-type").innerHTML = "Riduzione Silver";
+            document.getElementById("carrozza").innerHTML = carrozza;
+            document.getElementById("codice").innerHTML = codice;
+            document.getElementById("ticket-price").innerHTML = newcpk;
         }
         
         else {
-            console.log("Non hai sconti!")
             cpk = cpk + '€'
-            console.log(fnameEl.value)
-            console.log(lnameEl.value)
-            console.log(kmEl.value)
-            console.log(ageEl.value)
-            console.log(cpk)
+
+            document.getElementById("user-name").innerHTML = fnameEl.value;
+            document.getElementById("ticket-type").innerHTML = "Biglietto Standard";
+            document.getElementById("carrozza").innerHTML = carrozza;
+            document.getElementById("codice").innerHTML = codice;
+            document.getElementById("ticket-price").innerHTML = cpk;
         }
         
 
