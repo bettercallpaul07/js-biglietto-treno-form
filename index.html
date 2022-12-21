@@ -17,15 +17,15 @@
         <h1 class="text-center my-4 text-light text-uppercase">Calcola il prezzo del biglietto</h1>
 
         <div class="container">
-            <div id="input-tab">
+            <form id="input-tab">
                 <div class="d-flex justify-content-center fs-6 pt-4 to-clear">
                     <div class="pe-4 ps-4">
                         <label class="d-block my-2 text-center">Nome e Cognome</label>
-                        <input type="text" id="fname" class="option-style text-center"/>
+                        <input type="text" required id="fname" class="option-style text-center"/>
                     </div>
                     <div class="pe-4 ps-4">
                         <label class="d-block my-2 text-center">Km da percorrere</label>
-                        <input type="number" id="km" class="option-style text-center" />
+                        <input type="number" required id="km" class="option-style text-center" />
                     </div>
                     <div class="pe-4 ps-4">
                         <label class="d-block my-2 text-center">Fascia d'età</label>
@@ -37,18 +37,18 @@
                     </div>
                 </div> 
                 <div class="py-5 d-flex justify-content-center">
-                    <button class="button me-1" id="generate">
+                <button class="button me-1" id="generate" type="button">
                         Genera il tuo biglietto
                 </button>
                 <button class="button ms-1" id="reset" onclick= "clearInput()">
                     Annulla
                 </button>
-                <button class="button ms-1" id="savepdf" onclick= "generatePDF()">
+                <button class="button ms-1" id="savepdf" onclick= "generatePDF()" type="button">
                     Salva Biglietto
                 </button>
 
                 </div>
-            </div>
+            </form>
 
 
             <p class="text-center my-3 text-white text-uppercase" id="my-ticket">Il tuo Biglietto</p>
