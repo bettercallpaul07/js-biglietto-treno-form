@@ -3,6 +3,7 @@ const fnameEl = document.getElementById("fname");
 const kmEl = document.getElementById("km");
 const ageEl = document.getElementById("age-type");
 
+
 console.log(kmEl.value)
 console.log(ageEl.value)
 
@@ -14,6 +15,7 @@ let codice = Math.floor(Math.random() * 10000) + 90000;
 
 generate.addEventListener ('click',
     function() {
+
 
     if ((fnameEl.value == "") || (kmEl.value == "")) {
             console.log(fnameEl.value)
