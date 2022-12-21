@@ -20,6 +20,11 @@ generate.addEventListener ('click',
             console.log("Meh")
             alert("Oooo inserisci i dati");
         }
+
+    else if ((kmEl.value < 1)) {
+        alert("Valore dei kilometri non valido");
+    }
+
     else {
         document.getElementById("output-tab").style.display = "block";
         document.getElementById("my-ticket").style.display = "block";
