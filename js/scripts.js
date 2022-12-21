@@ -3,18 +3,24 @@ const fnameEl = document.getElementById("fname");
 const kmEl = document.getElementById("km");
 const ageEl = document.getElementById("age-type");
 
+console.log(kmEl.value)
+console.log(ageEl.value)
+
 let newcpk = 1;
 const price = 0.21;
 let carrozza = Math.floor(Math.random() * 10);
 let codice = Math.floor(Math.random() * 10000) + 90000;
 
 
-console.log(ageEl.value)
-
-
 generate.addEventListener ('click',
     function() {
 
+    if ((fnameEl.value == "") || (kmEl.value == "")) {
+            console.log(fnameEl.value)
+            console.log("Meh")
+            alert("Oooo inserisci i dati");
+        }
+    else {
         document.getElementById("output-tab").style.display = "block";
         document.getElementById("my-ticket").style.display = "block";
         document.getElementById("savepdf").style.display = "inline-block";
@@ -60,7 +66,9 @@ generate.addEventListener ('click',
         }
         
 
-    
+    }
+
+
     }
 )
 
